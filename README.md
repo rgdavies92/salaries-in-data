@@ -1,5 +1,9 @@
 # $alaries in Data Roles
 
+## Contents
+
+https://github.com/rgdavies92/salaries-in-data/blob/main/README.md?plain=1#L46
+
 ## Aims and the question
 
 This challenge was posed in week 5 of the General Assembly DSI course as an exercise in web-scraping, natural language processing, classification modeling, and model evaluation.    
