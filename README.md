@@ -71,6 +71,7 @@ In order to generate some useful predictors from the scraped data, the nltk Pyth
 <kbd><img src="images/counts.png" width=150 /></kbd>
 </p>
 <p align="center"><i><font size="1.5">Top 20 word occurrences after count vectorising the job title data. N-grams of length 1 were found to yield optimal results. </font></i></center>
+<br>
 
 ## Building and optimising a classification model
 
