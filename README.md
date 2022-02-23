@@ -30,8 +30,9 @@ Successfully scraping information from a single web-page was a good start, but m
 
 <p align="center" width="100%">
 <img src="images/url.png" width=500 height=50 />
-<center><i><font size="1.5">Base f-string URL template.</font></i></center>
 </p>
+<center><i><font size="1.5">Base f-string URL template.</font></i></center>
+
 
 In order to maximise data points, the largest cities in the US, the UK, Canada, France and Germany were scraped for job information. In all, ~16,000 unique jobs were scraped, reducing to ~2,000 jobs with salary information. With web scraping complete it was time to progress to the data cleaning stage of this challenge.
 
