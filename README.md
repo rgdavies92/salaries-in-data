@@ -193,7 +193,7 @@ The secondary aim of the challenge resided in model evaluation. This aim has bee
 
 In order for these results to be more widely applicable, a greater range of data would have to be gathered. Insight is limited by both the number of countries and the number of data roles that were scraped for data points. As it stands the conclusions broadly cover data roles in the US, Canada, the UK, France and Germany. For a more targeted analysis of any one of these countries it could be beneficial to firstly gather more data within that country before filtering on that country alone to prevent bias from abroad. Scraping sites beyond Indeed.com could be particularly helpful in this.  
 
-To conclude, the top 20 most important features discovered when predicting high/low salary for a job in data fields are the following:
+To conclude, the top 20 most important features discovered when predicting high/low salary for a job in data fields are the following: 
 
 <br>
 <p align="center" width="100%">
