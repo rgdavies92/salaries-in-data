@@ -29,7 +29,7 @@ Using the freshly identified tags and the Requests and Beautiful Soup Python lib
 Successfully scraping information from a single web-page was a good start, but more data was required. Indeed.com was lacking in salary information for the vast majority of jobs so a large number of job search pages had to be scraped to built a large enough dataset for the classification model to work on. Fortunately the Indeed url could be manipulated for a variety of search criteria to return successive search pages which were then scraped for information by a function comprising of multiple nested for-loops. An example of the base URL is included below, with f-strings used to substitute the search parameters.
 
 <p align="center" width="100%">
-<img src="images/url.png" width=500   />
+<kbd><img src="images/url.png" width=500   /></kbd>
 </p>
 <center><i><font size="1.5">Base f-string URL template.</font></i></center>
 
@@ -48,7 +48,7 @@ A small amount of data cleaning was required prior to modeling:
 * Finally a 'above median' binary target was created. Any salaries greater than the median salary were assigned 1, while others were assigned 0.
 
 <p align="center" width="100%">
-<img src="images/eda.png" width=700  />
+<kbd><img src="images/eda.png" width=700  /></kbd>
 <center><i><font size="1.5">Initial EDA overview after the stages above.</font></i></center>
 </p>
 
@@ -63,7 +63,7 @@ In order to generate some useful predictors from the scraped data, the nltk Pyth
 * The predictor set and target set were then train-test split and standardised for input to modeling.
 
 <p align="center" width="100%">
-<img src="images/counts.png" width=150 />
+<kbd><img src="images/counts.png" width=150 /></kbd>
 </p>
 <center><i><font size="1.5">Top 20 word occurrences after count vectorising the job title data. N-grams of length 1 were found to yield optimal results. </font></i></center>
 
@@ -81,7 +81,7 @@ This grid search yielded the optimum model described in the print-out below, wit
 <br>
 
 <p align="center" width="100%">
-<img src="images/model_description.png" width=700 />
+<kbd><img src="images/model_description.png" width=700 /></kbd>
 </p>
 <center><i><font size="1.5">Optimum LogisticRegression estimator parameters and corresponding top ten model coefficients.</font></i></center>
 
@@ -91,7 +91,7 @@ The top ten model beta coefficients plotted above give a clear indication which 
 <br>
 
 <p align="center" width="100%">
-<img src="images/odds.png" width=600 />
+<kbd><img src="images/odds.png" width=600 /></kbd>
 </p>
 <center><i><font size="1.5">Top ten beta coefficients obtained from LogisticRegression with additional statistics to aid interpretation.</font></i></center>
 
@@ -106,7 +106,7 @@ An appropriate insight from these coefficients would be:
 Some typical statistics used to evaluate classification model performance are accuracy, precision, recall and AUC-ROC plots. Each of these metric will be used to evaluate the LogisticRegression model.
 
 <p align="center" width="100%">
-<img src="images/model_scores.png" width=600 />
+<kbd><img src="images/model_scores.png" width=600 /></kbd>
 </p>
 <center><i><font size="1.5">Accuracy statistics for the LinearRegression model on training, cross validated training and testing datasets. Classification threshold of 0.5 used.</font></i></center>
 
@@ -117,7 +117,7 @@ The fact that the training dataset accuracy, the mean cross validated accuracy a
 Since it has been proven that the model generalises well, further model analysis will focus on the testing dataset from this point onwards. The plot below shows the test data confusion matrix, with a normalised version to the right. 
 
 <p align="center" width="100%">
-<img src="images/confusion.png" width=600  />
+<kbd><img src="images/confusion.png" width=600  /></kbd>
 </p>
 <center><i><font size="1.5">Test data confusion matrices. These two matrices are generated from the same dataset. The right matrix has been normalised. Classification threshold of 0.5 used.</font></i></center>
 
@@ -138,7 +138,7 @@ Using the granular statistics depicted in the normalised confusion matrix new me
 The definitions above are used to generate a plot of the precision-recall relationship and the AUC-ROC curve for the range of possible classification thresholds as seen below
 
 <p align="center" width="100%">
-<img src="images/praucroc.png" width=900 />
+<kbd><img src="images/praucroc.png" width=900 /></kbd>
 </p>
 <center><i><font size="1.5">Precision-Recall relationship and AUC-ROC curve for classification thresholds between 0 and 1. The dotted black line denotes baseline performance.</font></i></center>
 
@@ -149,7 +149,7 @@ The AUC-ROC curve for each class images how much better the model is performing 
 Finally, two further plots below can be useful when tuning a classification model to suit business, particularly when trying to select an case-specific classification threshold are included below.  With classification threshold on the X-axis the plots highlight how the classification threshold of the model could be tuned to suit a business problem. One such example would be to select a classification threshold which minimises false positives whilst still returning an accuracy score greater than 70%. In this instance a threshold of 0.78 satisfies the criteria and is circled on each plot.
 
 <p align="center" width="100%">
-<img src="images/threshold_annot.png" width=900 />
+<kbd><img src="images/threshold_annot.png" width=900 /></kbd>
 </p>
 <center><i><font size="1.5">Threshold plots against accuracy, recall, precision, f1 score and normalised TP, FP, FN, TN. Annotated and circled are criteria meeting the hypothetical business case.</font></i></center>
 
@@ -166,6 +166,6 @@ In order for these results to be more widely applicable, a greater range of data
 To conclude, the top 20 most important features discovered when predicting high/low salary for a job in data fields are the following:
 
 <p align="center" width="100%">
-<img src="images/features.png" width=700 />
+<kbd><img src="images/features.png" width=700 /></kbd>
 </p>
 <center><i><font size="1.5">Top 20 features when predicting high/low salary for jobs in the data field.</font></i></center>
