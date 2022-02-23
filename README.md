@@ -12,7 +12,7 @@ Although there are many sources of job and salary information, it was encouraged
 
 With Google Chrome's Developer Tools function used to inspect HTML on a page of job search results, it was possible to identify a number of key tags for information which might be helpful to scrape. 
 
-<img src="images/html.png" width=700 height=700 />
+<img src="images/html.png" width="700" height="700" />
 <center><i><font size="1.5">Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.</font></i></center>
 
 Using the freshly identified tags and the Requests and Beautiful Soup Python libraries it was possible to extract the following job information from each job card on the web page:
