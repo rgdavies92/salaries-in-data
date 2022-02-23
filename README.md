@@ -2,7 +2,7 @@
 
 ## Contents
 
-https://github.com/rgdavies92/salaries-in-data/blob/main/README.md?plain=1#L46
+[click on this link](#aims-and-the-question)
 
 ## Aims and the question
 
