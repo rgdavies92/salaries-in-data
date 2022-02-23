@@ -40,9 +40,12 @@ A small amount of data cleaning was required prior to modeling:
 * Salary data were log transformed to obtain a normal distribution before outliers beyond 3*standard deviation were removed. 
 * Finally a 'above median' binary target was created. Any salaries greater than the median salary were assigned 1, while others were assigned 0.
 
+<p align="center" width="100%">
 <img src="images/eda.png" width=700 height=700 />
 <center><i><font size="1.5">Initial EDA overview after the stages above.</font></i></center>
+</p>
 
+  
 ## Feature engineering with NLP 
 
 In order to generate some useful predictors from the scraped data, the nltk Python librarby was used in tandem with the sklearn CountVectorizer. The following pre-processing steps were taken on the job title information:
