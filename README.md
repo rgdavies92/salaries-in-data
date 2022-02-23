@@ -13,7 +13,7 @@
 
 ## Aims and the question
 
-This challenge was posed in week 5 of the General Assembly DSI course as an exercise in web-scraping, natural language processing, classification modeling, and model evaluation.    
+This challenge was posed in week 5 of the General Assembly DSI course as an exercise in web-scraping, natural language processing, classification modeling, and model evaluation. This project description assumes some familiarity with each of these methods.
 
 The primary aim was to web-scrape a dataset to be used to generate a classification model which describes the key factors in predicting the salaries for jobs oriented around data. The target was to predict whether a salary would be higher or lower than the median salary. The secondary aim was to describe the trade-off between precision and recall of the produced model, indicating how the model might be optimised in relation to a posed business case. 
 
