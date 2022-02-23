@@ -12,6 +12,7 @@ Although there are many sources of job and salary information, it was encouraged
 
 With Google Chrome's Developer Tools function used to inspect HTML on a page of job search results, it was possible to identify a number of key tags for information which might be helpful to scrape. 
 
+<br>
 <p align="center" width="100%">
 <kbd><img src="images/html.png" width="700"  /></kbd>
 </p>
@@ -28,6 +29,7 @@ Using the freshly identified tags and the Requests and Beautiful Soup Python lib
 
 Successfully scraping information from a single web-page was a good start, but more data was required. Indeed.com was lacking in salary information for the vast majority of jobs so a large number of job search pages had to be scraped to built a large enough dataset for the classification model to work on. Fortunately the Indeed url could be manipulated for a variety of search criteria to return successive search pages which were then scraped for information by a function comprising of multiple nested for-loops. An example of the base URL is included below, with f-strings used to substitute the search parameters.
 
+<br>
 <p align="center" width="100%">
 <kbd><img src="images/url.png" width=500   /></kbd>
 </p>
@@ -48,6 +50,8 @@ A small amount of data cleaning was required prior to modeling:
 * Salary data were log transformed to obtain a normal distribution before outliers beyond 3*standard deviation were removed. 
 * Finally a 'above median' binary target was created. Any salaries greater than the median salary were assigned 1, while others were assigned 0.
 
+
+<br>
 <p align="center" width="100%">
 <kbd><img src="images/eda.png" width=700  /></kbd>
 <p align="center"><i><font size="1.5">Initial EDA overview after the stages above.</font></i></p>
@@ -79,22 +83,25 @@ The optimum LogisticRegression parameterisation was found through use of a grid 
 * cv, or cross validation used a StratifiedKfold with 5 splits and a shuffle.
 
 This grid search yielded the optimum model described in the print-out below, with corresponding statistics.
-<br>
 
+<br>
 <p align="center" width="100%">
 <kbd><img src="images/model_description.png" width=700 /></kbd>
 </p>
-<center><i><font size="1.5">Optimum LogisticRegression estimator parameters and corresponding top ten model coefficients.</font></i></center>
+<p align="center"><i><font size="1.5">Optimum LogisticRegression estimator parameters and corresponding top ten model coefficients.</font></i></p>
+<br>
+
 
 The top ten model beta coefficients plotted above give a clear indication which predictors might lead to a salary above mean (high salary) and which predictors might lead to a salary below median (low salary). Because these variables have been standardised and the LogisticRegression produces log-odds beta coefficients by nature, the interpretation can become hairy! To convert from log-odds to odds we can use the exponential, but all conclusions must still be framed in the context of standard deviations of the predictor. To convert from odds to associated probability we use the equation:<br>
 <br>
 <center>$ p = \frac{odds}{1+odds} $ </center>
 <br>
-
+<br>
 <p align="center" width="100%">
 <kbd><img src="images/odds.png" width=600 /></kbd>
 </p>
-<center><i><font size="1.5">Top ten beta coefficients obtained from LogisticRegression with additional statistics to aid interpretation.</font></i></center>
+<p align="center"><i><font size="1.5">Top ten beta coefficients obtained from LogisticRegression with additional statistics to aid interpretation.</font></i></p>
+<br>
 
 An appropriate insight from these coefficients would be:
 * In terms of odds, an increase in 1 standard deviation of the country_FR_DE predictor scales the odds of a high salary by 0.25. This is a negative predictor. 
