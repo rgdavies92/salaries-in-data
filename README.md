@@ -17,7 +17,7 @@ With Google Chrome's Developer Tools function used to inspect HTML on a page of 
 </p>
 
 <center><i><font size="1.5">Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.</font></i></center>
-</p>
+
 
 Using the freshly identified tags and the Requests and Beautiful Soup Python libraries it was possible to extract the following job information from each job card on the web page:
 * Job title
@@ -30,6 +30,7 @@ Successfully scraping information from a single web-page was a good start, but m
 
 <img src="images/url.png" width=500 height=50 />
 <center><i><font size="1.5">Base f-string URL template.</font></i></center>
+</p>
 
 In order to maximise data points, the largest cities in the US, the UK, Canada, France and Germany were scraped for job information. In all, ~16,000 unique jobs were scraped, reducing to ~2,000 jobs with salary information. With web scraping complete it was time to progress to the data cleaning stage of this challenge.
 
@@ -59,7 +60,9 @@ In order to generate some useful predictors from the scraped data, the nltk Pyth
 * The produced matrix was joined with the existing predictors of 'city' and 'country' to form the predictor set.
 * The predictor set and target set were then train-test split and standardised for input to modeling.
 
+<p align="center" width="100%">
 <img src="images/counts.png" width=150 height=400 />
+</p>
 <center><i><font size="1.5">Top 20 word occurrences after count vectorising the job title data. N-grams of length 1 were found to yield optimal results. </font></i></center>
 
 ## Building and optimising a classification model
@@ -74,7 +77,10 @@ The optimum LogisticRegression parameterisation was found through use of a grid 
 
 This grid search yielded the optimum model described in the print-out below, with corresponding statistics.
 <br>
+
+<p align="center" width="100%">
 <img src="images/model_description.png" width=700 height=700 />
+</p>
 <center><i><font size="1.5">Optimum LogisticRegression estimator parameters and corresponding top ten model coefficients.</font></i></center>
 
 The top ten model beta coefficients plotted above give a clear indication which predictors might lead to a salary above mean (high salary) and which predictors might lead to a salary below median (low salary). Because these variables have been standardised and the LogisticRegression produces log-odds beta coefficients by nature, the interpretation can become hairy! To convert from log-odds to odds we can use the exponential, but all conclusions must still be framed in the context of standard deviations of the predictor. To convert from odds to associated probability we use the equation:<br>
@@ -82,7 +88,9 @@ The top ten model beta coefficients plotted above give a clear indication which 
 <center>$ p = \frac{odds}{1+odds} $ </center>
 <br>
 
+<p align="center" width="100%">
 <img src="images/odds.png" width=600 height=600 />
+</p>
 <center><i><font size="1.5">Top ten beta coefficients obtained from LogisticRegression with additional statistics to aid interpretation.</font></i></center>
 
 An appropriate insight from these coefficients would be:
@@ -95,7 +103,9 @@ An appropriate insight from these coefficients would be:
 
 Some typical statistics used to evaluate classification model performance are accuracy, precision, recall and AUC-ROC plots. Each of these metric will be used to evaluate the LogisticRegression model.
 
+<p align="center" width="100%">
 <img src="images/model_scores.png" width=600 height=600 />
+</p>
 <center><i><font size="1.5">Accuracy statistics for the LinearRegression model on training, cross validated training and testing datasets. Classification threshold of 0.5 used.</font></i></center>
 
 Firstly, accuracy is addressed. This describes the fraction of salaries which were correctly predicted as high or low. Because the median salary value was used to define a high/low salary, the baseline model to beat would have an accuracy of 0.51, or 51%. The LinearRegression model yields an accuracy of 0.79, or 79% on the unseen testing dataset with a classification threshold of 0.5, which is 28% higher than the baseline.
@@ -104,7 +114,9 @@ The fact that the training dataset accuracy, the mean cross validated accuracy a
 
 Since it has been proven that the model generalises well, further model analysis will focus on the testing dataset from this point onwards. The plot below shows the test data confusion matrix, with a normalised version to the right. 
 
+<p align="center" width="100%">
 <img src="images/confusion.png" width=600 height=600 />
+</p>
 <center><i><font size="1.5">Test data confusion matrices. These two matrices are generated from the same dataset. The right matrix has been normalised. Classification threshold of 0.5 used.</font></i></center>
 
 While the accuracy score could correctly communicate that with a classification threshold of 0.5, 79% of jobs were correctly classified to be high/low salary, this figure can mask more granular detail that the confusion matrix does not. Reading from the normalised matrix on the right we can observe the following:
@@ -123,7 +135,9 @@ Using the granular statistics depicted in the normalised confusion matrix new me
 
 The definitions above are used to generate a plot of the precision-recall relationship and the AUC-ROC curve for the range of possible classification thresholds as seen below
 
+<p align="center" width="100%">
 <img src="images/praucroc.png" width=900 height=600 />
+</p>
 <center><i><font size="1.5">Precision-Recall relationship and AUC-ROC curve for classification thresholds between 0 and 1. The dotted black line denotes baseline performance.</font></i></center>
 
 The precision-recall curve displays the relationship between the two attributes for each of class over the range of classification threshold values. Class 1 is high paying job and 0 is a low paying job. A simultaneous high precision and recall level for both classes would be ideal, but often that is hard to obtain. Imaging them both on the same plot can help to tune the model to meet business needs.
@@ -132,7 +146,9 @@ The AUC-ROC curve for each class images how much better the model is performing 
 
 Finally, two further plots below can be useful when tuning a classification model to suit business, particularly when trying to select an case-specific classification threshold are included below.  With classification threshold on the X-axis the plots highlight how the classification threshold of the model could be tuned to suit a business problem. One such example would be to select a classification threshold which minimises false positives whilst still returning an accuracy score greater than 70%. In this instance a threshold of 0.78 satisfies the criteria and is circled on each plot.
 
+<p align="center" width="100%">
 <img src="images/threshold_annot.png" width=900 height=600 />
+</p>
 <center><i><font size="1.5">Threshold plots against accuracy, recall, precision, f1 score and normalised TP, FP, FN, TN. Annotated and circled are criteria meeting the hypothetical business case.</font></i></center>
 
 ## Conclusions
@@ -146,5 +162,8 @@ The secondary aim of the challenge resided in model evaluation. This aim has bee
 In order for these results to be more widely applicable, a greater range of data would have to be gathered. Insight is limited by both the number of countries and the number of data roles that were scraped for data points. As it stands the conclusions broadly cover data roles in the US, Canada, the UK, France and Germany. For a more targeted analysis of any one of these countries it could be beneficial to firstly gather more data within that country before filtering on that country alone to prevent bias from abroad. Scraping sites beyond Indeed.com could be particularly helpful in this.  
 
 To conclude, the top 20 most important features discovered when predicting high/low salary for a job in data fields are the following:
+
+<p align="center" width="100%">
 <img src="images/features.png" width=700 height=700 />
+</p>
 <center><i><font size="1.5">Top 20 features when predicting high/low salary for jobs in the data field.</font></i></center>
