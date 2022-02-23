@@ -16,7 +16,7 @@ With Google Chrome's Developer Tools function used to inspect HTML on a page of 
 <kbd><img src="images/html.png" width="700"  /></kbd>
 </p>
 
-<p align="center"><font size="1">*Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.*</font></i></p>
+<p align="center"><i><font size="1">Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.</font></i></p>
 
 
 Using the freshly identified tags and the Requests and Beautiful Soup Python libraries it was possible to extract the following job information from each job card on the web page:
