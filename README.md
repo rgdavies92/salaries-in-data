@@ -118,10 +118,10 @@ The top ten model beta coefficients plotted above give a clear indication which 
 <br>
 
 An appropriate insight from these coefficients would be:
-* In terms of odds, an increase in 1 standard deviation of the country_FR_DE predictor scales the odds of a high salary by 0.25. This is a negative predictor. 
-* In terms of probability, a job being from country_FR_DE impacts the probability of it being a high salary job by 0.21 -  Approximately 1 in 5 jobs in country_FR_DE are classified as high salary.
-* In terms of odds, an increase in 1 standard deviation of the senior variable multiplies the odds of a high salary by 3.32. This is a positive predictor.
-* In terms of probability, a job containing the term senior in the title impacts the probability of it being a high salary job by 0.77 - Approximately 3 in 4 jobs with senior in the job title are classified as high salary.
+* In terms of odds, an increase in 1 standard deviation of the search_role_data_scientist predictor scales the odds of a high salary by 1.43. This is a positive predictor. 
+* In terms of probability, a job being from search_role_data_scientist impacts the probability of it being a high salary job by 0.59 -  Approximately 3 in 5 jobs with search_role_data_scientist = 1 are classified as high salary.
+* In terms of odds, an increase in 1 standard deviation of the country_UK variable multiplies the odds of a high salary by 0.71. This is a negative predictor.
+* In terms of probability, a job containing with country_UK = 1 impacts the probability of it being a high salary job by 0.41 - Approximately 2 in 5 jobs with with country_UK = 1 are classified as high salary.
 
 ## Results and model evaluation
 
@@ -150,8 +150,8 @@ Since it has been proven that the model generalises well, further model analysis
 While the accuracy score could correctly communicate that with a classification threshold of 0.5, 79% of jobs were correctly classified to be high/low salary, this figure can mask more granular detail that the confusion matrix does not. Reading from the normalised matrix on the right we can observe the following:
 * 42% of jobs were correctly identified as low salary. This is a True Negative (TN).
 * 37% of jobs were correctly identified as high salary. This is a True Positive (TP).
-* 12% of jobs were incorrectly identified to be low salary when they were high salary in reality. This is a False Negative (FN).
-* 9%  of jobs were incorrectly identified to be high salary when they were low salary in reality. This is a False Positive (FP).
+* 11% of jobs were incorrectly identified to be low salary when they were high salary in reality. This is a False Negative (FN).
+* 9.6%  of jobs were incorrectly identified to be high salary when they were low salary in reality. This is a False Positive (FP).
 
 Using the granular statistics depicted in the normalised confusion matrix new metrics can be constructed which are commonly used to evaluate the model performance for the full range of classification thresholds between 0 and 1:
 
