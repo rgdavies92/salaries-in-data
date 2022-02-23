@@ -13,7 +13,7 @@ Although there are many sources of job and salary information, it was encouraged
 With Google Chrome's Developer Tools function used to inspect HTML on a page of job search results, it was possible to identify a number of key tags for information which might be helpful to scrape. 
 
 <p align="center" width="100%">
-<img src="images/html.png" width="700" height="700"/>
+<img src="images/html.png" width="700" />
 </p>
 
 <center><i><font size="1.5">Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.</font></i></center>
