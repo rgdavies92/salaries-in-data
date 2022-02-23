@@ -17,7 +17,7 @@ With Google Chrome's Developer Tools function used to inspect HTML on a page of 
 </p>
 
 <p align="center"><i><font size="1">Sample Indeed.com search result page with Developer Tools. The identified jobcard is highlighted in blue.</font></i></p>
-
+<br>
 
 Using the freshly identified tags and the Requests and Beautiful Soup Python libraries it was possible to extract the following job information from each job card on the web page:
 * Job title
@@ -31,8 +31,9 @@ Successfully scraping information from a single web-page was a good start, but m
 <p align="center" width="100%">
 <kbd><img src="images/url.png" width=500   /></kbd>
 </p>
-<center><i><font size="1.5">Base f-string URL template.</font></i></center>
 
+<p align="center"><i><font size="1.5">Base f-string URL template.</font></i></p>
+<br>
 
 In order to maximise data points, the largest cities in the US, the UK, Canada, France and Germany were scraped for job information. In all, ~16,000 unique jobs were scraped, reducing to ~2,000 jobs with salary information. With web scraping complete it was time to progress to the data cleaning stage of this challenge.
 
@@ -49,9 +50,9 @@ A small amount of data cleaning was required prior to modeling:
 
 <p align="center" width="100%">
 <kbd><img src="images/eda.png" width=700  /></kbd>
-<center><i><font size="1.5">Initial EDA overview after the stages above.</font></i></center>
+<p align="center"><i><font size="1.5">Initial EDA overview after the stages above.</font></i></p>
 </p>
-
+<br>
   
 ## Feature engineering with NLP 
 
