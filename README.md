@@ -28,6 +28,7 @@ Using the freshly identified tags and the Requests and Beautiful Soup Python lib
 
 Successfully scraping information from a single web-page was a good start, but more data was required. Indeed.com was lacking in salary information for the vast majority of jobs so a large number of job search pages had to be scraped to built a large enough dataset for the classification model to work on. Fortunately the Indeed url could be manipulated for a variety of search criteria to return successive search pages which were then scraped for information by a function comprising of multiple nested for-loops. An example of the base URL is included below, with f-strings used to substitute the search parameters.
 
+<p align="center" width="100%">
 <img src="images/url.png" width=500 height=50 />
 <center><i><font size="1.5">Base f-string URL template.</font></i></center>
 </p>
