@@ -106,7 +106,9 @@ This grid search yielded the optimum model described in the print-out below, wit
 
 The top ten model beta coefficients plotted above give a clear indication which predictors might lead to a salary above mean (high salary) and which predictors might lead to a salary below median (low salary). Because these variables have been standardised and the LogisticRegression produces log-odds beta coefficients by nature, the interpretation can become hairy! To convert from log-odds to odds we can use the exponential, but all conclusions must still be framed in the context of standard deviations of the predictor. To convert from odds to associated probability we use the equation:<br>
 <br>
-<img src="https://render.githubusercontent.com/render/math?math=p=\frac{odds}{1+odds}">
+<p align="center" width="100%">
+<img src="https://render.githubusercontent.com/render/math?math=p=\frac{odds}{1 + odds}">
+</p>
 <br>
 <br>
 <p align="center" width="100%">
