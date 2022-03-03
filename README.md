@@ -3,7 +3,7 @@
 ## Contents
 
 [Aims and the question](#aims-and-the-question)<br> 
-[Web-scraping the data](#web-scraping-the-data)<br>
+[Web scraping the data](#web-scraping-the-data)<br>
 [Data cleaning and EDA](#data-cleaning-and-eda)<br>
 [Feature engineering with NLP](#feature-engineering-with-nlp)<br>
 [Building and optimising a classification model](#Building-and-optimising-a-classification-model)<br>
@@ -17,7 +17,7 @@ This challenge was posed in week 5 of the General Assembly DSI course as an exer
 
 The primary aim was to web-scrape a dataset to be used to generate a classification model which describes the key factors in predicting the salaries for jobs oriented around data. The target was to predict whether a salary would be higher or lower than the median salary. The secondary aim was to describe the trade-off between precision and recall of the produced model, indicating how the model might be optimised in relation to a posed business case. 
 
-## Web-scraping the data
+## Web scraping the data
 
 Although there are many sources of job and salary information, it was encouraged to scrape the job aggregator [Indeed.com](https://www.indeed.com) as they regularly pool job postings from other sources.
 
